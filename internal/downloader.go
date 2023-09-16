@@ -15,7 +15,7 @@ func FontDownloader() (string, error) {
 	res, err := http.Get(url)
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	defer res.Body.Close()
@@ -27,7 +27,7 @@ func FontDownloader() (string, error) {
 	out, err := os.Create("JetBrainsMono.zip")
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	defer out.Close()
@@ -35,7 +35,7 @@ func FontDownloader() (string, error) {
 	_, err = io.Copy(out, res.Body)
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	return "Font downloaded!", nil

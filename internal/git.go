@@ -16,20 +16,20 @@ func Git() (string, error) {
 	err := cmdName.Run()
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	err = cmdEmail.Run()
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	err = cmdDefaultBranch.Run()
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
-	return ("Git config done!"), nil
+	return "Git config done!", nil
 }
