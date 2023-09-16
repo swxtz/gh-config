@@ -1,6 +1,9 @@
 package main
 
 import (
+	// "github.com/fatih/color"
+	"log"
+
 	"github.com/fatih/color"
 	"github.com/swxtz/gh-config/internal"
 )
@@ -10,7 +13,7 @@ func main() {
 	green := color.New(color.FgGreen)
 
 	if err != nil {
-		panic("gitParser is nil")
+		log.Fatal("gitParser is nil")
 	}
 
 	green.Println(gitParser)
@@ -18,7 +21,7 @@ func main() {
 	fontDownloader, err := internal.FontDownloader()
 
 	if err != nil {
-		panic("fontDownloader is nil")
+		log.Fatal("fontDownloader is nil")
 	}
 
 	green.Println(fontDownloader)
@@ -26,9 +29,14 @@ func main() {
 	unzip, err := internal.Unzip()
 
 	if err != nil {
-		panic("unzip is nil")
+		log.Fatal(err)
 	}
 
 	green.Println(unzip)
 
+	_, err = internal.FontInstaller()
+
+	if err != nil {
+		log.Fatal(err)
+	}
 }
