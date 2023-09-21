@@ -41,6 +41,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	exec.Command("explorer", ".")
+	explorer := exec.Command("explorer", ".")
+	err = explorer.Run()
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 }
