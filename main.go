@@ -3,7 +3,6 @@ package main
 import (
 	// "github.com/fatih/color"
 	"log"
-	"os/exec"
 
 	"github.com/fatih/color"
 	"github.com/swxtz/gh-config/internal"
@@ -41,11 +40,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	explorer := exec.Command("explorer", ".")
-	err = explorer.Run()
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	internal.OpenExplorer()
 }
