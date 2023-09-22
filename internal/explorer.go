@@ -2,6 +2,7 @@ package internal
 
 import (
 	"os"
+	"os/exec"
 )
 
 func OpenExplorer() {
@@ -12,5 +13,7 @@ func OpenExplorer() {
 
 	dir := rawDir + `\fonts\ttf`
 
-	println(dir)
+	open := exec.Command("explorer", dir)
+
+	open.Run()
 }
