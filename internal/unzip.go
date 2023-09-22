@@ -30,7 +30,7 @@ func Unzip() (string, error) {
 
 	for _, f := range r.File {
 		if strings.HasPrefix(f.Name, "fonts/ttf/") && !f.FileInfo().IsDir() {
-			yellow.Println("Extraindo \n: ", f.Name)
+			yellow.Println("Extraindo : ", f.Name)
 
 			rc, err := f.Open()
 
@@ -54,8 +54,6 @@ func Unzip() (string, error) {
 				return "", fmt.Errorf("erro copiando conteúdo")
 			}
 
-		} else {
-			fmt.Println("arquivo n é ttf: ", f.Name)
 		}
 	}
 
