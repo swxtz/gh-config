@@ -1,8 +1,8 @@
 package main
 
 import (
-	// "github.com/fatih/color"
 	"log"
+	"time"
 
 	"github.com/fatih/color"
 	"github.com/swxtz/gh-config/internal/downloader"
@@ -45,4 +45,8 @@ func main() {
 	}
 
 	explorer.OpenExplorer()
+
+	font.FontInstaller()
+
+	time.Sleep(8 * time.Second)
 }
