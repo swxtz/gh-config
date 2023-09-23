@@ -1,4 +1,4 @@
-package internal
+package font
 
 func FontInstaller() (string, error) {
 
