@@ -1,4 +1,4 @@
-package internal
+package unzip
 
 import (
 	"archive/zip"
