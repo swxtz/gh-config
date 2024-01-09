@@ -1,6 +1,6 @@
 use std::{fs::{File, create_dir_all}, io::Write};
 
-
+use crate::logger::custom::{custom_message, Colors};
 
 
 pub fn create_file()  {
@@ -12,5 +12,5 @@ pub fn create_file()  {
     let content = "";
     file.write_all(content.as_bytes()).expect("Não foi possível escrever no arquivo de configuração");
 
-   println!("Arquivo de configuração criado com sucesso");
+    custom_message("Arquivo de configuração criado com sucesso".to_string(), Colors::Green)
 }

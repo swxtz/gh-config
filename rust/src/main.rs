@@ -1,5 +1,6 @@
 
 mod config;
+mod logger;
 
 use config::create_file;
 
