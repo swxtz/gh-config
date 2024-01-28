@@ -8,10 +8,10 @@ use super::schema::Os;
 pub fn write_os(value: Os) {
     let config = ConfigFile {
         os: value,
+        schema: "config".to_string(),
     };
 
     let yaml = serde_yaml::to_string(&config).unwrap();
     println!("{}", yaml);
     fs::write("config.yaml", yaml).expect("Unable to write file");
-    
 }

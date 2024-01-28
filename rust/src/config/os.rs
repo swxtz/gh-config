@@ -2,10 +2,8 @@ use crate::logger::custom::{custom_message, Colors};
 use std::thread;
 use std::time::Duration;
 
-
 use super::schema;
 use super::writer::write_os;
-
 
 pub fn verify_os() {
     #[warn(unused_assignments)]
@@ -13,7 +11,6 @@ pub fn verify_os() {
         "Verificando sistema operacional...".to_string(),
         Colors::Yellow,
     );
-
 
     let sleep_duration = Duration::from_millis(500);
     thread::sleep(sleep_duration);

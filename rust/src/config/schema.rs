@@ -11,4 +11,5 @@ pub enum Os {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ConfigFile {
     pub os: Os,
+    pub schema: String,
 }

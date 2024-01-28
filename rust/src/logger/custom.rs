@@ -1,4 +1,5 @@
- use colored::Colorize;
+
+use colored::Colorize;
 
 pub enum Colors {
     Green,
@@ -6,7 +7,7 @@ pub enum Colors {
     Red,
 }
 
-pub fn custom_message(message: String, color: Colors ) {
+pub fn custom_message(message: String, color: Colors) {
     match color {
         Colors::Green => println!("{}", message.green()),
         Colors::Yellow => println!("{}", message.yellow()),
