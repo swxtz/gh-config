@@ -3,3 +3,7 @@ config.yaml
 
 jetbrains_mono.zip
 jetbrains_mono
+
+fonts
+OFL.txt
+AUTHORS.txt
