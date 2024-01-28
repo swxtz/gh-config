@@ -1,4 +1,4 @@
-mod logger;
+
 mod utils;
 
 use crate::utils::commands::run_command;
