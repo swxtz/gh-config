@@ -3,6 +3,14 @@ use std::path::Path;
 use std::{fs, io};
 use zip::ZipArchive;
 
+/// Unzip the file while maintaining its folder hierarchy
+///
+/// # How to use
+/// ```no_run
+/// unzip(filepath: &str)
+/// ```
+///
+
 pub fn unzip(filepath: &str) {
     let filename = Path::new(filepath);
     let file = File::open(&filename).unwrap();

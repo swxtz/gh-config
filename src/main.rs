@@ -1,4 +1,3 @@
-
 mod utils;
 
 use crate::utils::commands::run_command;
