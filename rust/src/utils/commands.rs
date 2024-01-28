@@ -7,7 +7,6 @@ pub fn run_command(command: &str, args: Vec<&str>) -> Result<(), std::io::Error>
     let status = cmd.status();
 
     if status.is_ok() {
-
         Ok(())
     } else {
         Err(std::io::Error::new(

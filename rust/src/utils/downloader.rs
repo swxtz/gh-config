@@ -1,7 +1,6 @@
-use std::fs::File;
 use crate::utils::checksum::check256;
-
-
+use std::fs::File;
+use crate::utils::unzip::unzip;
 
 pub fn download_font() -> Result<(), Box<dyn std::error::Error>> {
     let font_url = "https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip";
@@ -10,8 +9,6 @@ pub fn download_font() -> Result<(), Box<dyn std::error::Error>> {
     let unzip_location = "jetbrains_mono";
 
     let mut response = reqwest::blocking::get(font_url).expect("Erro no request");
-
-
 
     if response.status().is_success() {
         let mut local_file = File::create(zip_location)?;
@@ -23,7 +20,7 @@ pub fn download_font() -> Result<(), Box<dyn std::error::Error>> {
 
         println!("Arquivo ZIP baixado com sucesso para: {}", zip_location);
 
-        //unzip_file(zip_location, unzip_location);
+        unzip(zip_location);
 
         println!("Arquivo descompactado para: {}", unzip_location);
     } else {
@@ -32,5 +29,3 @@ pub fn download_font() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
-
-
