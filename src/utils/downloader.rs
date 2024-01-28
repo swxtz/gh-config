@@ -1,7 +1,8 @@
 use crate::utils::checksum::check256;
-use std::fs::File;
 use crate::utils::unzip::unzip;
+use std::fs::File;
 
+/// Download the fonts compressed in a .zip from the jetbrains website
 pub fn download_font() -> Result<(), Box<dyn std::error::Error>> {
     let font_url = "https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip";
     let font_checksum = "6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7eb7012f7bbf";
