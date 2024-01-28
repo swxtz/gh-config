@@ -1,2 +1,2 @@
 pub mod commands;
-mod downloader;
+pub mod downloader;
